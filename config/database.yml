@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: shopone_dev
+
+test:
+  <<: *default
+  database: shopone_test
+
+production:
+  <<: *default
+  database: shopone_production
+  username: shopone
+  password: <%= ENV["SHOPONE_DATABASE_PASSWORD"] %>

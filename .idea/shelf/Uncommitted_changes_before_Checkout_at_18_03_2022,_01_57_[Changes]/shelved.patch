@@ -1,0 +1,557 @@
+Index: tmp/pids/server.pid
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>23840
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tmp/pids/server.pid b/tmp/pids/server.pid
+--- a/tmp/pids/server.pid	(revision 883950ae36bad5b5094182b808abca822f66034f)
++++ b/tmp/pids/server.pid	(date 1647564517644)
+@@ -1,1 +1,1 @@
+-23840
+\ No newline at end of file
++13417
+\ No newline at end of file
+Index: log/development.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/log/development.log b/log/development.log
+--- a/log/development.log	(revision 883950ae36bad5b5094182b808abca822f66034f)
++++ b/log/development.log	(date 1647564949126)
+@@ -118274,3 +118274,487 @@
+ Completed 302 Found in 11ms (ActiveRecord: 4.9ms | Allocations: 4008)
+ 
+ 
++Started GET "/" for 127.0.0.1 at 2022-03-18 01:14:13 +0100
++Processing by StaticPagesController#home as HTML
++  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/helpers/sessions_helper.rb:17:in `current_user'
++  Rendering layout layouts/application.html.erb
++  Rendering static_pages/home.html.erb within layouts/application
++  [1m[36mMicropost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_user_info.html.erb:4
++  Rendered shared/_user_info.html.erb (Duration: 1.5ms | Allocations: 812)
++  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:5
++  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1[0m  [["followed_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:11
++  [1m[36mItem Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:17
++  Rendered shared/_stats.html.erb (Duration: 5.0ms | Allocations: 2699)
++  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 20)
++  Rendered shared/_micropost_form.html.erb (Duration: 0.6ms | Allocations: 357)
++  [1m[36mMicropost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1)[0m
++  ↳ app/views/shared/_feed_microposts.html.erb:1
++  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1) ORDER BY "microposts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 12], ["OFFSET", 0]]
++  ↳ app/views/shared/_feed_microposts.html.erb:3
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 314], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 313], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 312], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 301], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/models/micropost.rb:21:in `display_image'
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 300], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 299], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 298], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 297], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 295], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 294], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 293], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 292], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  Rendered collection of microposts/_micropost.html.erb [12 times] (Duration: 37.6ms | Allocations: 23548)
++  Rendered shared/_feed_microposts.html.erb (Duration: 42.0ms | Allocations: 26677)
++  Rendered static_pages/home.html.erb within layouts/application (Duration: 49.5ms | Allocations: 30822)
++  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 15)
++  Rendered layouts/_head.html.erb (Duration: 1.4ms | Allocations: 1520)
++  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 183)
++  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 570)
++  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 33887)
++Completed 200 OK in 63ms (Views: 49.0ms | ActiveRecord: 8.7ms | Allocations: 37528)
++
++
++Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3eab981696ffc7e87683a317b39a78a66b36fde8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFINmFRSDYiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--974529280bfdd2d3dc330feb9779a6475337b428/razer-deathadder-elite,15421078289_8.jpg" for 127.0.0.1 at 2022-03-18 01:14:13 +0100
++Processing by ActiveStorage::Representations::RedirectController#show as JPEG
++  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3eab981696ffc7e87683a317b39a78a66b36fde8", "variation_key"=>"[FILTERED]", "filename"=>"razer-deathadder-elite,15421078289_8"}
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  [1m[36mActiveStorage::VariantRecord Load (1.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 1], ["variation_digest", "MsYg+E/UzaDP34LdHMcjwpGjSgw="], ["LIMIT", 1]]
++  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
++  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
++[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: hhw1dv24y78ze3dr9o3kxtw79mh9 (http://0.0.0.0:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMDoxOToxMy42MTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--8ba940730e4f7130d45fa7b94d5f9d811b26a633/razer-deathadder-elite,15421078289_8.jpg)[0m
++Redirected to http://0.0.0.0:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMDoxOToxMy42MTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--8ba940730e4f7130d45fa7b94d5f9d811b26a633/razer-deathadder-elite,15421078289_8.jpg
++Completed 302 Found in 19ms (ActiveRecord: 6.1ms | Allocations: 3923)
++
++
++Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMDoxOToxMy42MTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--8ba940730e4f7130d45fa7b94d5f9d811b26a633/razer-deathadder-elite,15421078289_8.jpg" for 127.0.0.1 at 2022-03-18 01:14:13 +0100
++Processing by ActiveStorage::DiskController#show as JPEG
++  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"razer-deathadder-elite,15421078289_8"}
++Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 149)
++
++
++Started GET "/" for 127.0.0.1 at 2022-03-18 01:14:15 +0100
++Processing by StaticPagesController#home as HTML
++  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/helpers/sessions_helper.rb:17:in `current_user'
++  Rendering layout layouts/application.html.erb
++  Rendering static_pages/home.html.erb within layouts/application
++  [1m[36mMicropost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_user_info.html.erb:4
++  Rendered shared/_user_info.html.erb (Duration: 1.8ms | Allocations: 812)
++  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:5
++  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1[0m  [["followed_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:11
++  [1m[36mItem Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:17
++  Rendered shared/_stats.html.erb (Duration: 5.0ms | Allocations: 2699)
++  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 20)
++  Rendered shared/_micropost_form.html.erb (Duration: 0.5ms | Allocations: 357)
++  [1m[36mMicropost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1)[0m
++  ↳ app/views/shared/_feed_microposts.html.erb:1
++  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1) ORDER BY "microposts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 12], ["OFFSET", 0]]
++  ↳ app/views/shared/_feed_microposts.html.erb:3
++  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 314], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 313], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 312], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 301], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/models/micropost.rb:21:in `display_image'
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 300], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 299], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 298], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 297], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 295], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 294], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 293], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 292], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  Rendered collection of microposts/_micropost.html.erb [12 times] (Duration: 38.3ms | Allocations: 23548)
++  Rendered shared/_feed_microposts.html.erb (Duration: 42.8ms | Allocations: 26677)
++  Rendered static_pages/home.html.erb within layouts/application (Duration: 50.7ms | Allocations: 30822)
++  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 15)
++  Rendered layouts/_head.html.erb (Duration: 1.4ms | Allocations: 1524)
++  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 183)
++  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 575)
++  Rendered layout layouts/application.html.erb (Duration: 53.6ms | Allocations: 33896)
++Completed 200 OK in 63ms (Views: 47.0ms | ActiveRecord: 10.0ms | Allocations: 37564)
++
++
++Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3eab981696ffc7e87683a317b39a78a66b36fde8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFINmFRSDYiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--974529280bfdd2d3dc330feb9779a6475337b428/razer-deathadder-elite,15421078289_8.jpg" for 127.0.0.1 at 2022-03-18 01:14:15 +0100
++Processing by ActiveStorage::Representations::RedirectController#show as JPEG
++  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3eab981696ffc7e87683a317b39a78a66b36fde8", "variation_key"=>"[FILTERED]", "filename"=>"razer-deathadder-elite,15421078289_8"}
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  [1m[36mActiveStorage::VariantRecord Load (1.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 1], ["variation_digest", "MsYg+E/UzaDP34LdHMcjwpGjSgw="], ["LIMIT", 1]]
++  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
++[36m  Disk Storage (0.3ms) [0m[34mGenerated URL for file at key: hhw1dv24y78ze3dr9o3kxtw79mh9 (http://0.0.0.0:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMDoxOToxNS4xMzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--9a0c0c1681174b106da0c50887f718d3abaa415c/razer-deathadder-elite,15421078289_8.jpg)[0m
++Redirected to http://0.0.0.0:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMDoxOToxNS4xMzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--9a0c0c1681174b106da0c50887f718d3abaa415c/razer-deathadder-elite,15421078289_8.jpg
++Completed 302 Found in 11ms (ActiveRecord: 3.8ms | Allocations: 4574)
++
++
++Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMDoxOToxNS4xMzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--9a0c0c1681174b106da0c50887f718d3abaa415c/razer-deathadder-elite,15421078289_8.jpg" for 127.0.0.1 at 2022-03-18 01:14:15 +0100
++Processing by ActiveStorage::DiskController#show as JPEG
++  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"razer-deathadder-elite,15421078289_8"}
++Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 149)
++
++
++Started GET "/" for 127.0.0.1 at 2022-03-18 01:48:40 +0100
++  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
++Processing by StaticPagesController#home as HTML
++  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/helpers/sessions_helper.rb:17:in `current_user'
++  Rendering layout layouts/application.html.erb
++  Rendering static_pages/home.html.erb within layouts/application
++  [1m[36mMicropost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_user_info.html.erb:4
++  Rendered shared/_user_info.html.erb (Duration: 2.5ms | Allocations: 1585)
++  [1m[36mUser Count (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:5
++  [1m[36mUser Count (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1[0m  [["followed_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:11
++  [1m[36mItem Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:17
++  Rendered shared/_stats.html.erb (Duration: 26.9ms | Allocations: 17532)
++  Rendered shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 362)
++  Rendered shared/_micropost_form.html.erb (Duration: 13.4ms | Allocations: 2047)
++  [1m[36mMicropost Count (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1)[0m
++  ↳ app/views/shared/_feed_microposts.html.erb:1
++  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1) ORDER BY "microposts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 12], ["OFFSET", 0]]
++  ↳ app/views/shared/_feed_microposts.html.erb:3
++  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 314], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 313], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 312], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 301], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/models/micropost.rb:21:in `display_image'
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 300], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 299], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 298], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 297], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 295], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 294], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 293], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 292], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  Rendered collection of microposts/_micropost.html.erb [12 times] (Duration: 1412.5ms | Allocations: 994770)
++  Rendered shared/_feed_microposts.html.erb (Duration: 1431.4ms | Allocations: 999240)
++  Rendered static_pages/home.html.erb within layouts/application (Duration: 1486.0ms | Allocations: 1021843)
++  Rendered layouts/_shim.html.erb (Duration: 1.8ms | Allocations: 165)
++  Rendered layouts/_head.html.erb (Duration: 67.1ms | Allocations: 24220)
++  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 765)
++  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 1013)
++  Rendered layout layouts/application.html.erb (Duration: 1558.3ms | Allocations: 1049315)
++Completed 200 OK in 1623ms (Views: 1531.6ms | ActiveRecord: 36.0ms | Allocations: 1091183)
++
++
++Started GET "/users/1" for 127.0.0.1 at 2022-03-18 01:55:45 +0100
++Processing by UsersController#show as HTML
++  Parameters: {"id"=>"1"}
++  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/controllers/users_controller.rb:11:in `show'
++  Rendering layout layouts/application.html.erb
++  Rendering users/show.html.erb within layouts/application
++  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:5
++  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1[0m  [["followed_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:11
++  [1m[36mItem Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:17
++  Rendered shared/_stats.html.erb (Duration: 5.0ms | Allocations: 2957)
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/helpers/sessions_helper.rb:17:in `current_user'
++  Rendered users/_follow_form.html.erb (Duration: 0.4ms | Allocations: 334)
++  [1m[36mMicropost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "microposts" WHERE "microposts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
++  ↳ app/views/users/show.html.erb:19
++  [1m[36mMicropost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/users/show.html.erb:20
++  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = $1 ORDER BY "microposts"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
++  ↳ app/views/users/show.html.erb:22
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 313], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 312], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 301], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/models/micropost.rb:21:in `display_image'
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 295], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 283], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 277], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 271], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 265], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 259], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 253], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 247], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 241], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 235], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 223], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 217], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 211], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 205], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 199], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 193], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 187], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 181], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 175], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 169], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 163], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 157], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 151], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 139], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 133], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 127], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  Rendered collection of microposts/_micropost.html.erb [30 times] (Duration: 61.3ms | Allocations: 34550)
++  [1m[36mCACHE Micropost Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/users/show.html.erb:24
++  Rendered users/show.html.erb within layouts/application (Duration: 74.3ms | Allocations: 43463)
++  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 16)
++  Rendered layouts/_head.html.erb (Duration: 1.5ms | Allocations: 1691)
++  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 202)
++  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 573)
++  Rendered layout layouts/application.html.erb (Duration: 77.4ms | Allocations: 46672)
++Completed 200 OK in 87ms (Views: 70.6ms | ActiveRecord: 11.1ms | Allocations: 51977)
++
++
++Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3eab981696ffc7e87683a317b39a78a66b36fde8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFINmFRSDYiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--974529280bfdd2d3dc330feb9779a6475337b428/razer-deathadder-elite,15421078289_8.jpg" for 127.0.0.1 at 2022-03-18 01:55:45 +0100
++Processing by ActiveStorage::Representations::RedirectController#show as JPEG
++  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3eab981696ffc7e87683a317b39a78a66b36fde8", "variation_key"=>"[FILTERED]", "filename"=>"razer-deathadder-elite,15421078289_8"}
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  [1m[36mActiveStorage::VariantRecord Load (0.2ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 1], ["variation_digest", "MsYg+E/UzaDP34LdHMcjwpGjSgw="], ["LIMIT", 1]]
++  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
++[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: hhw1dv24y78ze3dr9o3kxtw79mh9 (http://0.0.0.0:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMTowMDo0NS43MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--f343ca2551b4cce8d7f91b283b5a627df21f7d0c/razer-deathadder-elite,15421078289_8.jpg)[0m
++Redirected to http://0.0.0.0:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMTowMDo0NS43MDJaIiwicHVyIjoiYmxvYl9rZXkifX0=--f343ca2551b4cce8d7f91b283b5a627df21f7d0c/razer-deathadder-elite,15421078289_8.jpg
++Completed 302 Found in 30ms (ActiveRecord: 3.6ms | Allocations: 13219)
++
++
++Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2gzTVdSMk1qUjVOemg2WlROa2NqbHZNMnQ0ZEhjM09XMW9PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KaGVtVnlMV1JsWVhSb1lXUmtaWEl0Wld4cGRHVWxNa014TlRReU1UQTNPREk0T1Y4NExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuY21GNlpYSXRaR1ZoZEdoaFpHUmxjaTFsYkdsMFpTVXlRekUxTkRJeE1EYzRNamc1WHpndWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMi0wMy0xOFQwMDo1Mjo0Ni41NDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--e2d0d93b40f656e7f7e23489a1ec07cc333417bd/razer-deathadder-elite,15421078289_8.jpg" for 127.0.0.1 at 2022-03-18 01:55:45 +0100
++Processing by ActiveStorage::DiskController#show as JPEG
++  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"razer-deathadder-elite,15421078289_8"}
++Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 294)
++
++
++Started GET "/" for 127.0.0.1 at 2022-03-18 01:55:49 +0100
++Processing by StaticPagesController#home as HTML
++  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/helpers/sessions_helper.rb:17:in `current_user'
++  Rendering layout layouts/application.html.erb
++  Rendering static_pages/home.html.erb within layouts/application
++  [1m[36mMicropost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_user_info.html.erb:4
++  Rendered shared/_user_info.html.erb (Duration: 1.4ms | Allocations: 885)
++  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = $1[0m  [["follower_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:5
++  [1m[36mUser Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = $1[0m  [["followed_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:11
++  [1m[36mItem Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."user_id" = $1[0m  [["user_id", 1]]
++  ↳ app/views/shared/_stats.html.erb:17
++  Rendered shared/_stats.html.erb (Duration: 4.3ms | Allocations: 2733)
++  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 21)
++  Rendered shared/_micropost_form.html.erb (Duration: 0.5ms | Allocations: 403)
++  [1m[36mMicropost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1)[0m
++  ↳ app/views/shared/_feed_microposts.html.erb:1
++  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM relationships WHERE follower_id = 1) OR user_id = 1) ORDER BY "microposts"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 12], ["OFFSET", 0]]
++  ↳ app/views/shared/_feed_microposts.html.erb:3
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 314], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 313], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 312], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 301], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/models/micropost.rb:21:in `display_image'
++  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 300], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 299], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 298], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 297], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 295], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 294], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 293], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:2
++  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 292], ["record_type", "Micropost"], ["name", "image"], ["LIMIT", 1]]
++  ↳ app/views/microposts/_micropost.html.erb:6
++  Rendered collection of microposts/_micropost.html.erb [12 times] (Duration: 36.0ms | Allocations: 23666)
++  Rendered shared/_feed_microposts.html.erb (Duration: 40.2ms | Allocations: 26843)
++  Rendered static_pages/home.html.erb within layouts/application (Duration: 46.9ms | Allocations: 31147)
++  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 15)
++  Rendered layouts/_head.html.erb (Duration: 2.0ms | Allocations: 1609)
++  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 184)
++  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 571)
++  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 34312)
++Completed 200 OK in 61ms (Views: 44.7ms | ActiveRecord: 10.6ms | Allocations: 38333)
++
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ffc48933-a2ac-47d8-8cc2-0cc79e8d6a15\" name=\"Changes\" comment=\"Cache files\">\n      <changelist_data name=\"Damian Cichosz\" email=\"cichosz-damian@wp.pl\" date=\"1636718555000\" />\n      <change afterPath=\"$PROJECT_DIR$/LICENSE\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gitignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/log/development.log\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/log/development.log\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Ruby File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"0.0.2\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"24hpiuFBFCWKvEl1WQjJo3tIwQT\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"nodejs_package_manager_path\" value=\"yarn\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/test/models\" />\n      <recent name=\"$PROJECT_DIR$/test/integration\" />\n      <recent name=\"$PROJECT_DIR$/test/helpers\" />\n      <recent name=\"$PROJECT_DIR$/test/fixtures\" />\n      <recent name=\"$PROJECT_DIR$/test/controllers\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/spec/factories\" />\n      <recent name=\"$PROJECT_DIR$/spec\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Rails.Development: shopone\">\n    <configuration name=\"Development: shopone\" type=\"RailsRunConfigurationType\" factoryName=\"Rails\">\n      <module name=\"shopone\" />\n      <predefined_log_file enabled=\"true\" id=\"RUBY_RAILS_SERVER\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"RUBY_ARGS\" VALUE=\"\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"WORK DIR\" VALUE=\"$MODULE_DIR$\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"SHOULD_USE_SDK\" VALUE=\"false\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"ALTERN_SDK_NAME\" VALUE=\"\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"myPassParentEnvs\" VALUE=\"true\" />\n      <EXTENSION ID=\"BundlerRunConfigurationExtension\" BUNDLE_MODE=\"AUTO\" bundleExecEnabled=\"true\" />\n      <EXTENSION ID=\"JRubyRunConfigurationExtension\" NailgunExecEnabled=\"false\" />\n      <EXTENSION ID=\"RubyCoverageRunConfigurationExtension\" track_test_folders=\"true\" runner=\"rcov\" ENABLE_BRANCH_COVERAGE=\"true\" ENABLE_FORKED_COVERAGE=\"true\">\n        <COVERAGE_PATTERN ENABLED=\"true\">\n          <PATTERN REGEXPS=\"/.rvm/\" INCLUDED=\"false\" />\n        </COVERAGE_PATTERN>\n      </EXTENSION>\n      <EXTENSION ID=\"org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension\" SCRATCH_USE_RAILS_RUNNER=\"false\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"SCRIPT_ARGS\" VALUE=\"\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"PORT\" VALUE=\"3000\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"IP\" VALUE=\"0.0.0.0\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"DUMMY_APP\" VALUE=\"test/dummy\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"RAILS_SERVER_TYPE\" VALUE=\"Default\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"ENVIRONMENT_TYPE\" VALUE=\"development\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"LAUNCH_JS\" VALUE=\"false\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"Production: shopone\" type=\"RailsRunConfigurationType\" factoryName=\"Rails\">\n      <module name=\"shopone\" />\n      <predefined_log_file enabled=\"true\" id=\"RUBY_RAILS_SERVER\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"RUBY_ARGS\" VALUE=\"\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"WORK DIR\" VALUE=\"$MODULE_DIR$\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"SHOULD_USE_SDK\" VALUE=\"false\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"ALTERN_SDK_NAME\" VALUE=\"\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"myPassParentEnvs\" VALUE=\"true\" />\n      <EXTENSION ID=\"BundlerRunConfigurationExtension\" BUNDLE_MODE=\"AUTO\" bundleExecEnabled=\"true\" />\n      <EXTENSION ID=\"JRubyRunConfigurationExtension\" NailgunExecEnabled=\"false\" />\n      <EXTENSION ID=\"RubyCoverageRunConfigurationExtension\" track_test_folders=\"true\" runner=\"rcov\" ENABLE_BRANCH_COVERAGE=\"true\" ENABLE_FORKED_COVERAGE=\"true\">\n        <COVERAGE_PATTERN ENABLED=\"true\">\n          <PATTERN REGEXPS=\"/.rvm/\" INCLUDED=\"false\" />\n        </COVERAGE_PATTERN>\n      </EXTENSION>\n      <EXTENSION ID=\"org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension\" SCRATCH_USE_RAILS_RUNNER=\"false\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"SCRIPT_ARGS\" VALUE=\"\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"PORT\" VALUE=\"3000\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"IP\" VALUE=\"0.0.0.0\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"DUMMY_APP\" VALUE=\"test/dummy\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"RAILS_SERVER_TYPE\" VALUE=\"Default\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"ENVIRONMENT_TYPE\" VALUE=\"production\" />\n      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME=\"LAUNCH_JS\" VALUE=\"false\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"spec: shopone\" type=\"RakeRunConfigurationType\" factoryName=\"Rake\">\n      <module name=\"shopone\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RUBY_ARGS\" VALUE=\"\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"WORK DIR\" VALUE=\"$MODULE_DIR$\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"SHOULD_USE_SDK\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"ALTERN_SDK_NAME\" VALUE=\"\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"myPassParentEnvs\" VALUE=\"true\" />\n      <EXTENSION ID=\"BundlerRunConfigurationExtension\" BUNDLE_MODE=\"AUTO\" bundleExecEnabled=\"true\" />\n      <EXTENSION ID=\"JRubyRunConfigurationExtension\" NailgunExecEnabled=\"false\" />\n      <EXTENSION ID=\"RubyCoverageRunConfigurationExtension\" track_test_folders=\"true\" runner=\"rcov\" ENABLE_BRANCH_COVERAGE=\"true\" ENABLE_FORKED_COVERAGE=\"true\">\n        <COVERAGE_PATTERN ENABLED=\"true\">\n          <PATTERN REGEXPS=\"/.rvm/\" INCLUDED=\"false\" />\n        </COVERAGE_PATTERN>\n      </EXTENSION>\n      <EXTENSION ID=\"org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension\" SCRATCH_USE_RAILS_RUNNER=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_NAME\" VALUE=\"spec\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_ARGS\" VALUE=\"\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_ATTACHED_TEST_FRAMEWORKS\" VALUE=\":rspec \" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_TRACE\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_DRYRUN\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_PREREQS\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_TESTOPTS\" VALUE=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"test: shopone\" type=\"RakeRunConfigurationType\" factoryName=\"Rake\">\n      <module name=\"shopone\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RUBY_ARGS\" VALUE=\"\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"WORK DIR\" VALUE=\"$MODULE_DIR$\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"SHOULD_USE_SDK\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"ALTERN_SDK_NAME\" VALUE=\"\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"myPassParentEnvs\" VALUE=\"true\" />\n      <envs>\n        <env name=\"RAILS_ENV\" value=\"test\" />\n      </envs>\n      <EXTENSION ID=\"BundlerRunConfigurationExtension\" BUNDLE_MODE=\"AUTO\" bundleExecEnabled=\"true\" />\n      <EXTENSION ID=\"JRubyRunConfigurationExtension\" NailgunExecEnabled=\"false\" />\n      <EXTENSION ID=\"RubyCoverageRunConfigurationExtension\" track_test_folders=\"true\" runner=\"rcov\" ENABLE_BRANCH_COVERAGE=\"true\" ENABLE_FORKED_COVERAGE=\"true\">\n        <COVERAGE_PATTERN ENABLED=\"true\">\n          <PATTERN REGEXPS=\"/.rvm/\" INCLUDED=\"false\" />\n        </COVERAGE_PATTERN>\n      </EXTENSION>\n      <EXTENSION ID=\"org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension\" SCRATCH_USE_RAILS_RUNNER=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_NAME\" VALUE=\"test\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_ARGS\" VALUE=\"\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_ATTACHED_TEST_FRAMEWORKS\" VALUE=\":test_unit \" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_TRACE\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_DRYRUN\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_PREREQS\" VALUE=\"false\" />\n      <RAKE_RUN_CONFIG_SETTINGS_ID NAME=\"RAKE_TASK_OPTION_TESTOPTS\" VALUE=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"All tests in test2: shopone\" type=\"TestUnitRunConfigurationType\" factoryName=\"Test::Unit/Shoulda/Minitest\" temporary=\"true\">\n      <module name=\"shopone\" />\n      <predefined_log_file enabled=\"true\" id=\"RUBY_TESTUNIT\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"RUBY_ARGS\" VALUE=\"-Itest\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"WORK DIR\" VALUE=\"$MODULE_DIR$\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"SHOULD_USE_SDK\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"ALTERN_SDK_NAME\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"myPassParentEnvs\" VALUE=\"true\" />\n      <envs>\n        <env name=\"RAILS_ENV\" value=\"test\" />\n        <env name=\"JRUBY_OPTS\" value=\"-X+O\" />\n      </envs>\n      <EXTENSION ID=\"BundlerRunConfigurationExtension\" BUNDLE_MODE=\"AUTO\" bundleExecEnabled=\"true\" />\n      <EXTENSION ID=\"JRubyRunConfigurationExtension\" NailgunExecEnabled=\"false\" />\n      <EXTENSION ID=\"RubyCoverageRunConfigurationExtension\" track_test_folders=\"true\" runner=\"rcov\" ENABLE_BRANCH_COVERAGE=\"true\" ENABLE_FORKED_COVERAGE=\"true\">\n        <COVERAGE_PATTERN ENABLED=\"true\">\n          <PATTERN REGEXPS=\"/.rvm/\" INCLUDED=\"false\" />\n        </COVERAGE_PATTERN>\n      </EXTENSION>\n      <EXTENSION ID=\"org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension\" SCRATCH_USE_RAILS_RUNNER=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TESTS_FOLDER_PATH\" VALUE=\"$MODULE_DIR$/test2\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_SCRIPT_PATH\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_SCRIPTS_PATHS\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_FILE_MASK\" VALUE=\"**/{*_test,test_*,*_spec}.rb\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_METHOD_NAME\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_TEST_TYPE\" VALUE=\"ALL_IN_FOLDER\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"DRB\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"ZEUS\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"SPRING\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"RUNNER_OPTIONS\" VALUE=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"All tests in test: shopone\" type=\"TestUnitRunConfigurationType\" factoryName=\"Test::Unit/Shoulda/Minitest\" temporary=\"true\">\n      <module name=\"shopone\" />\n      <predefined_log_file enabled=\"true\" id=\"RUBY_TESTUNIT\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"RUBY_ARGS\" VALUE=\"-Itest\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"WORK DIR\" VALUE=\"$MODULE_DIR$\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"SHOULD_USE_SDK\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"ALTERN_SDK_NAME\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"myPassParentEnvs\" VALUE=\"true\" />\n      <envs>\n        <env name=\"RAILS_ENV\" value=\"test\" />\n        <env name=\"JRUBY_OPTS\" value=\"-X+O\" />\n      </envs>\n      <EXTENSION ID=\"BundlerRunConfigurationExtension\" BUNDLE_MODE=\"AUTO\" bundleExecEnabled=\"true\" />\n      <EXTENSION ID=\"JRubyRunConfigurationExtension\" NailgunExecEnabled=\"false\" />\n      <EXTENSION ID=\"RubyCoverageRunConfigurationExtension\" track_test_folders=\"true\" runner=\"rcov\" ENABLE_BRANCH_COVERAGE=\"true\" ENABLE_FORKED_COVERAGE=\"true\">\n        <COVERAGE_PATTERN ENABLED=\"true\">\n          <PATTERN REGEXPS=\"/.rvm/\" INCLUDED=\"false\" />\n        </COVERAGE_PATTERN>\n      </EXTENSION>\n      <EXTENSION ID=\"org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension\" SCRATCH_USE_RAILS_RUNNER=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TESTS_FOLDER_PATH\" VALUE=\"$MODULE_DIR$/test\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_SCRIPT_PATH\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_SCRIPTS_PATHS\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_FILE_MASK\" VALUE=\"**/{*_test,test_*,*_spec}.rb\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_METHOD_NAME\" VALUE=\"\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"TEST_TEST_TYPE\" VALUE=\"ALL_IN_FOLDER\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"DRB\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"ZEUS\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"SPRING\" VALUE=\"false\" />\n      <RTEST_RUN_CONFIG_SETTINGS_ID NAME=\"RUNNER_OPTIONS\" VALUE=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Test::Unit/Shoulda/Minitest.All tests in test2: shopone\" />\n        <item itemvalue=\"Test::Unit/Shoulda/Minitest.All tests in test: shopone\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"SpringUtil\" SPRING_PRE_LOADER_OPTION=\"true\" RAKE_SPRING_PRE_LOADER_OPTION=\"true\" RAILS_SPRING_PRE_LOADER_OPTION=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ffc48933-a2ac-47d8-8cc2-0cc79e8d6a15\" name=\"Changes\" comment=\"\" />\n      <created>1644092803358</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1644092803358</updated>\n      <workItem from=\"1644092804576\" duration=\"1702000\" />\n      <workItem from=\"1644278365086\" duration=\"150000\" />\n      <workItem from=\"1645881030525\" duration=\"978000\" />\n      <workItem from=\"1646354980984\" duration=\"702000\" />\n      <workItem from=\"1646437341146\" duration=\"967000\" />\n      <workItem from=\"1646524141780\" duration=\"599000\" />\n      <workItem from=\"1647045924868\" duration=\"3703000\" />\n      <workItem from=\"1647556902697\" duration=\"3878000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"System files\">\n      <created>1644103166774</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1644103166774</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Update navbar view\">\n      <created>1646442418090</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1646442418090</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Add rspec faker and factory_bot gems\">\n      <created>1647050790421</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647050790421</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Update to rails 7.0.2.3\">\n      <created>1647557505950</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647557505950</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Update to rails 7.0.2.3\">\n      <created>1647557528289</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647557528289</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Rspec fix\">\n      <created>1647561997321</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647561997321</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Rspec fix\">\n      <created>1647562009587</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647562009587</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Text arrangement user.rb\">\n      <created>1647562047810</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647562047810</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Cache files\">\n      <created>1647562093023</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647562093023</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Cache files\">\n      <created>1647562441685</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1647562441685</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"11\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"0.0.2\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"System files\" />\n    <MESSAGE value=\"Update navbar view\" />\n    <MESSAGE value=\"Add rspec faker and factory_bot gems\" />\n    <MESSAGE value=\"Update to rails 7.0.2.3\" />\n    <MESSAGE value=\"Rspec fix\" />\n    <MESSAGE value=\"Text arrangement user.rb\" />\n    <MESSAGE value=\"Cache files\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Cache files\" />\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/shopone@spec__shopone.rcov\" NAME=\"spec: shopone Coverage Results\" MODIFIED=\"1647557212431\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"rcov\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" MODULE_NAME=\"shopone\" />\n    <SUITE FILE_PATH=\"coverage/shopone@test__shopone.rcov\" NAME=\"test: shopone Coverage Results\" MODIFIED=\"1647046201905\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"rcov\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" MODULE_NAME=\"shopone\" />\n    <SUITE FILE_PATH=\"coverage/shopone@test_should_redirect_index_when_not_logged_in.rcov\" NAME=\"test_should_redirect_index_when_not_logged_in Coverage Results\" MODIFIED=\"1646359550688\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"rcov\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" MODULE_NAME=\"shopone\" />\n    <SUITE FILE_PATH=\"coverage/shopone@test_should_be_valid.rcov\" NAME=\"test_should_be_valid Coverage Results\" MODIFIED=\"1646360321045\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"rcov\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" MODULE_NAME=\"shopone\" />\n    <SUITE FILE_PATH=\"coverage/shopone@All_tests_in_test2__shopone.rcov\" NAME=\"All tests in test2: shopone Coverage Results\" MODIFIED=\"1647046215754\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"rcov\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" MODULE_NAME=\"shopone\" />\n    <SUITE FILE_PATH=\"coverage/shopone@Development__shopone.rcov\" NAME=\"Development: shopone Coverage Results\" MODIFIED=\"1647557349583\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"rcov\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" MODULE_NAME=\"shopone\" />\n    <SUITE FILE_PATH=\"coverage/shopone@All_tests_in_test__shopone.rcov\" NAME=\"All tests in test: shopone Coverage Results\" MODIFIED=\"1646361335706\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"rcov\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" MODULE_NAME=\"shopone\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 883950ae36bad5b5094182b808abca822f66034f)
++++ b/.idea/workspace.xml	(date 1647564868375)
+@@ -2,10 +2,8 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="ffc48933-a2ac-47d8-8cc2-0cc79e8d6a15" name="Changes" comment="Cache files">
+-      <changelist_data name="Damian Cichosz" email="cichosz-damian@wp.pl" date="1636718555000" />
+-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/pids/server.pid" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -261,6 +259,7 @@
+       <workItem from="1646524141780" duration="599000" />
+       <workItem from="1647045924868" duration="3703000" />
+       <workItem from="1647556902697" duration="3878000" />
++      <workItem from="1647564507853" duration="350000" />
+     </task>
+     <task id="LOCAL-00001" summary="System files">
+       <created>1644103166774</created>
+@@ -332,7 +331,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1647562441685</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="Cache files">
++      <created>1647564841358</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1647564841358</updated>
++    </task>
++    <option name="localTasksCounter" value="12" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
