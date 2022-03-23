@@ -1,10 +1,9 @@
-# Ruby on Rails social network application
+# Ruby on Rails Shopone application
 
-University of Gdansk project.
+University of Gdansk Bachelor thesis.
 
 ## License
-
-All source code is available jointly under the MIT License. 
+ 
 See [LICENSE.md](LICENSE.md) for details.
 
 ## Getting started
@@ -17,7 +16,7 @@ Next, migrate the database:
 ```
 $ rails db:migrate
 ```
-Next, for Rails 7 install node packages and create css and js bundles:
+Next install yarn and compile css and js:
 ```
 $ yarn install
 $ yarn build
@@ -28,6 +27,10 @@ Finally, run the test suite to verify that everything is working correctly:
 $ rails test
 ```
 If the test suite passes, you'll be ready to run the app in a local server:
+```
+$ ./bin/dev
+``` 
+or
 ```
 $ rails server
 ```
