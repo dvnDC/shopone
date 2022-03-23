@@ -3,26 +3,27 @@
     <div class="container">
       <%= link_to "Shopone", root_path, id: "logo", class: "navbar-brand" %>
       <form class="d-flex">
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <%= link_to "Offers", items_path, class: "nav-link" %>
             <%= link_to "Help", help_path, class: "nav-link" %>
-          <% if logged_in? %>
-            <%= link_to "Users", users_path, class: "nav-link" %>
-            <%= link_to "Profile", current_user, class: "nav-link" %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %></li>
-              <li><%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
-            </ul>
-          </li>
-          <% else %>
-            <%= link_to "Log in", login_path, class: "nav-link"  %>
-          <% end %>
-        </ul>
-      </div>
+            <% if logged_in? %>
+              <%= link_to "Users", users_path, class: "nav-link" %>
+              <%= link_to "Profile", current_user, class: "nav-link" %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %></li>
+                  <li><%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
+                </ul>
+              </li>
+            <% else %>
+              <%= link_to "Log in", login_path, class: "nav-link" %>
+            <% end %>
+          </ul>
+        </div>
       </form>
     </div>
   </nav>

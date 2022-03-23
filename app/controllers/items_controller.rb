@@ -14,12 +14,26 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      flash[:success] = "Profile updated!"
+      redirect_to @item
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+  end
+
   def create
     @item = current_user.items.build(item_params)
     @item.image.attach(params[:item][:image])
     if @item.save
       flash[:success] = "Item created!"
-      redirect_to root_url
+      redirect_to items_path
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
       render 'static_pages/home'
