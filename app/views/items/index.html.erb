@@ -32,7 +32,8 @@
           <td><%= link_to image_tag(item.display_image, width: "100") %></td>
           <td>
             <%= link_to "Check", item, class: "btn btn-primary" %>
-            <%= link_to "Buy", '#', class: "btn btn-danger" %>
+            <%= link_to "Edit", edit_item_path(item), class: "btn btn-warning" %>
+            <%= link_to "Delete", item, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
           </td>
         </tr>
       <% end %>
