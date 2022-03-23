@@ -1,12 +1,16 @@
-<% provide(:title, @item.name) %>
+<%# provide(:title, @item.name) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%=
-          @item %>
         <%= @item.name %>
       </h1>
+      <td><%= @item.content %></td>
+      <td><%= @item.price %> PLN</td>
+      <td><%= link_to image_tag(@item.display_image, width: "100") %></td>
+      <td>
+        <%= link_to "Buy", '#', class: "btn btn-danger" %>
+      </td>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>

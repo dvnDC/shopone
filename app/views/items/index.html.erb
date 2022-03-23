@@ -2,41 +2,42 @@
 <h1>All Offers</h1>
 
 <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
-    </aside>
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= render 'shared/user_info' %>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
   <div class="col">
     <%= will_paginate %>
     <table class=" table table-dark">
-  <thead>
-  <tr>
-    <th scope="col">Product name</th>
-    <th scope="col">Description</th>
-    <th scope="col">Price</th>
+      <thead>
+      <tr>
+        <th scope="col">Product name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
         <th scope="col">Photo</th>
-    <th scope="col">Actions</th>
+        <th scope="col">Actions</th>
 
-  </tr>
-  </thead>
-  <tbody>
-  <% @items.each do |item| %>
-    <tr>
-      <td><%= item.name %> </td>
-      <td><%= item.content %></td>
-      <td><%= item.price %> PLN</td>
-              <td><%= link_to image_tag(item.display_image, width: "100") %></td>
-      <td><%= link_to "Check", '#', class: "btn btn-primary" %>
-        <%= link_to "Buy", '#', class: "btn btn-danger" %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-  </table>
-  <%= will_paginate %>
-</div>
+      </tr>
+      </thead>
+      <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.name %> </td>
+          <td><%= item.content %></td>
+          <td><%= item.price %> PLN</td>
+          <td><%= link_to image_tag(item.display_image, width: "100") %></td>
+          <td>
+            <%= link_to "Check", item, class: "btn btn-primary" %>
+            <%= link_to "Buy", '#', class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </div>
 </div>
