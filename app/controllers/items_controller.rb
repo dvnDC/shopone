@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     @item.image.attach(params[:item][:image])
     if @item.save
       flash[:success] = "Item created!"
-      redirect_to root_url
+      redirect_to items_path
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
       render 'static_pages/home'
