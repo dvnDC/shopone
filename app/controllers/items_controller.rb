@@ -14,6 +14,20 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      flash[:success] = "Profile updated!"
+      redirect_to @item
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+  end
+
   def create
     @item = current_user.items.build(item_params)
     @item.image.attach(params[:item][:image])
