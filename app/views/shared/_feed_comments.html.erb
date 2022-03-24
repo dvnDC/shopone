@@ -1,0 +1,6 @@
+<% if @feed_comments.any? %>
+  <ol class="microposts">
+    <%= render @feed_comments %>
+  </ol>
+  <%= will_paginate @feed_comments, params: { controller: :items, action: :home } %>
+<% end %>
