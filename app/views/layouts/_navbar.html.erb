@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container px-4 px-lg-5">
+    <%= link_to "SHOPONE", root_path, id: "logo", class: "navbar-brand" %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+        <%= link_to "Offers", items_path, class: "nav-link" %>
+        <%= link_to "Help", help_path, class: "nav-link" %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#!">All Products</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+          </ul>
+        </li>
+        <% if logged_in? %>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to "Profile", current_user, class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %></li>
+            <li><%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
+          </ul>
+        </li>
+        <% else %>
+          <%= link_to "Log in", login_path, class: "nav-link" %>
+          <% end %>
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-dark" type="submit">
+          <i class="bi-cart-fill me-1"></i>
+          Cart
+          <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
