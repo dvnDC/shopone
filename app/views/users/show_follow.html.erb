@@ -24,7 +24,10 @@
     <% if @users.any? %>
       <ul class="users follow"><%= render @users %>
       </ul>
+      <div class="digg_pagination">
       <%= will_paginate %>
+      </div>
+      <p>
     <% end %>
   </div>
 </div>

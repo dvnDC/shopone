@@ -3,18 +3,18 @@ class ItemsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def index
-    @items = Item.paginate(page: params[:page])
+    @items = Item.paginate(page: params[:page], :per_page => 16)
   end
 
   def new
     @item = Item.new
   end
 
-  def show #TODO:  FIX @comment error
+  def show
     @item = Item.find(params[:id])
     @comment = @item.comments.build
-    @comments = @item.comments.paginate(page: params[:page])
-    @feed_comments = current_user.feed.paginate(page: params[:page], :per_page => 12)
+    # @comments = @item.comments.paginate(page: params[:page]) #TODO:  FIX @comment error
+    # @feed_comments = current_user.feed.paginate(page: params[:page], :per_page => 9)
   end
 
   def edit

@@ -21,7 +21,9 @@
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
+      <div class="digg_pagination">
       <%= will_paginate @microposts %>
+      </div>
       <% end %>
   </div>
 </div>
