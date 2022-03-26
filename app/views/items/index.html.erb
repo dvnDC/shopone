@@ -1,14 +1,15 @@
 <% provide(:title, 'Offers') %>
 
-<section class="py-5">
-
+<section class="bg-light py-5">
+  <div class="text-center">
  <%= link_to "Add new offer", new_item_path, class: "btn btn-primary" %>
-
-
+  </div>
   <div class="container px-4 px-lg-5 mt-5">
+    <div class="digg_pagination">
+      <%= will_paginate %>
+    </div>
+    <p>
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
-        <%= will_paginate %>
         <% @items.each do |item| %>
           <div class="col mb-5">
             <div class="card h-100">
@@ -31,8 +32,9 @@
             </div>
           </div>
         <% end %>
-        <%= will_paginate %>
-
+    </div>
+    <div class="digg_pagination">
+      <%= will_paginate %>
     </div>
   </div>
 </section>
