@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffc48933-a2ac-47d8-8cc2-0cc79e8d6a15" name="Changes" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/shopone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shopone.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/builds/application.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.bootstrap.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" beforeDir="false" />
-    </list>
+    <list default="true" id="ffc48933-a2ac-47d8-8cc2-0cc79e8d6a15" name="Changes" comment="Initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="delete-bot" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -239,6 +234,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: shopone" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test2: shopone" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test2: shopone" />
         <item itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: shopone" />
       </list>
@@ -378,8 +375,8 @@
     <SUITE FILE_PATH="coverage/shopone@test__shopone.rcov" NAME="test: shopone Coverage Results" MODIFIED="1647046201905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
     <SUITE FILE_PATH="coverage/shopone@test_should_redirect_index_when_not_logged_in.rcov" NAME="test_should_redirect_index_when_not_logged_in Coverage Results" MODIFIED="1646359550688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
     <SUITE FILE_PATH="coverage/shopone@test_should_be_valid.rcov" NAME="test_should_be_valid Coverage Results" MODIFIED="1646360321045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
-    <SUITE FILE_PATH="coverage/shopone@All_tests_in_test2__shopone.rcov" NAME="All tests in test2: shopone Coverage Results" MODIFIED="1647046215754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
-    <SUITE FILE_PATH="coverage/shopone@Development__shopone.rcov" NAME="Development: shopone Coverage Results" MODIFIED="1647557349583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
+    <SUITE FILE_PATH="coverage/shopone@All_tests_in_test2__shopone.rcov" NAME="All tests in test2: shopone Coverage Results" MODIFIED="1648091627617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
+    <SUITE FILE_PATH="coverage/shopone@Development__shopone.rcov" NAME="Development: shopone Coverage Results" MODIFIED="1648084071379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
     <SUITE FILE_PATH="coverage/shopone@All_tests_in_test__shopone.rcov" NAME="All tests in test: shopone Coverage Results" MODIFIED="1646361335706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="shopone" />
   </component>
 </project>
