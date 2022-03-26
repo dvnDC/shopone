@@ -7,11 +7,14 @@
 
   <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
         <%= will_paginate %>
         <% @items.each do |item| %>
           <div class="col mb-5">
             <div class="card h-100">
-              <%= link_to image_tag(item.display_image, height: "150"), class: "card-img-top" %>
+              <div class="text-center">
+              <%= link_to image_tag(item.display_image, height: "150"), class: "card-img-top" if item.image %>
+              </div>
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">
