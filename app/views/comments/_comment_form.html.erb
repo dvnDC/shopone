@@ -1,6 +1,18 @@
-<%= form_with(model: @comment, local: true) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new comment..." %>
-  </div><%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+<div class="row gx-5 justify-content-center">
+  <div class="col-lg-12">
+    <div class="card-body p-4">
+      <div class="d-flex">
+        <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+        <div class="ms-4">
+          <%= form_with(model: @comment, local: true) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <div class="field">
+              <%= f.text_area :content, placeholder: "Compose new comment..." %>
+            </div><%= f.submit "Post", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

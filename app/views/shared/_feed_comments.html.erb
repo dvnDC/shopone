@@ -2,5 +2,7 @@
   <ol class="microposts">
     <%= render @feed_comments %>
   </ol>
+  <div class="digg_pagination">
   <%= will_paginate @feed_comments, params: { controller: :items, action: :home } %>
+  </div>
 <% end %>

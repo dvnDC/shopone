@@ -1,19 +1,87 @@
 <%# provide(:title, @item.name) %>
-<p><%= @item.name %></p>
-<p><%= @item.content %></p>
-<p><%= @item.price %> PLN</p>
-<p><%= link_to image_tag(@item.display_image, width: "100") %></p>
-<p><%= link_to "Back", items_path, class: "btn btn-info" %></p>
+
+<section class="bg-light py-5">
+
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-2 justify-content-center">
+
+      <div class="col mb-15">
+        <div class="card h-100">
+          <div class="card-body p-5">
+            <div class="text-center">
+              <h5 class="fw-bolder">
+                <%= @item.name %>
+              </h5>
+            </div>
+            <div class="card h-100">
+              <div class="card-body p-5">
+                <div class="text-center">
+                  <p>Price: <%= @item.price %> EUR</p>
+                  <p>Specification: <%= @item.content %></p>
+                  <p>Description: <%= @item.content %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center">
+              <%= link_to "Buy", @item, class: "btn btn-primary", class: "btn btn-outline-danger mt-auto" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-5">
+        <div class="card h-100">
+          <div class="text-center">
+            <%= link_to image_tag(@item.display_image, height: "250"), class: "card-img-top" if @item.image %>
+          </div>
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%= render 'shared/user_info' %>
-    </section>
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-2 justify-content-center">
 
-    <section class="micropost_form">
-      <%= render 'comments/comment_form' %>
-    </section>
-  </aside>
-</div>
+      <div class="col mb-15">
+        <div class="card h-100">
+          <div class="card-body p-5">
+
+            <div class="row">
+              <aside class="col-md-4">
+                <section class="user_info">
+                  <%= render 'shared/user_info' %>
+                </section>
+              </aside>
+
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <%= render 'comments/comment_form' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-5">
+          <div class="card h-100">
+            <div class="text-center">
+              <div class="card-body p-5">
+              Here you will find comments.
+              </div>
+            </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>

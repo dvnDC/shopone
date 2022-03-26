@@ -2,5 +2,7 @@
   <ol class="microposts">
     <%= render @feed_microposts %>
   </ol>
-  <%= will_paginate @feed_microposts, params: { controller: :static_pages, action: :home } %>
+  <div class="digg_pagination">
+<%= will_paginate @feed_microposts, params: { controller: :static_pages, action: :home } %>
+  </div>
 <% end %>
