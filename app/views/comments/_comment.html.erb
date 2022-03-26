@@ -1,15 +1,21 @@
-<!--ID micropost for css styles-->
-
-<li id="micropost" -<%= comment.id %>>
-  <%= link_to gravatar_for(comment.user, size: 50), comment.user %>
-  <span class="user"><%= link_to comment.user.name, comment.user %></span>
-  <span class="content">
-    <%= comment.content %>
-  </span>
-  <span class="timestamp">
-Posted <%= time_ago_in_words(comment.created_at) %> ago.
-    <% if current_user?(comment.user) %>
-      <%= link_to "delete", comment, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <% end %>
-</span>
-</li>
+<div class="container px-5 my-5 px-5">
+  <div class="row gx-5 justify-content-center">
+    <div class="col-lg-12">
+      <div class="card mb-4">
+        <div class="card-body p-4">
+          <div class="d-flex">
+            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+            <div class="ms-4">
+              <p class="mb-1"><%= comment.content %></p>
+              <div class="small text-muted">- <%= link_to comment.user.name, comment.user, class: "small text-muted" %>
+                <% if current_user?(comment.user) %>
+                  <%= link_to "delete", comment, class: "small text-muted", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
