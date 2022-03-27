@@ -18,13 +18,26 @@
     </div>
   </div>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to Shopone!</h1>
-    <h2>
-      This is the test home page. Visit
-      <a href="https://github.com/dvnDC">GitHub</a>
-    </h2>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  </div>
+
+    <div class="container px-5 my-5 px-5">
+      <div class="card mb-4">
+        <div class="card-body p-4">
+
+      <div class="text-center mb-5">
+
+        <div class="card mb-4">
+          <div class="card-body p-4">
+        <h2 class="fw-bolder">New here?</h2>
+        <p class="lead mb-0">Don't wait, just sign-up and check what awaits you! </p>
+      </div>
+        </div>
+      </div>
+      <div class="text-center mb-5">
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
+      </div>
+        </div>
+      </div>
+    </div>
 <% end %>
 </section>
