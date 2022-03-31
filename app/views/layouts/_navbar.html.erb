@@ -1,38 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container px-4 px-lg-5">
-    <%= link_to "SHOPONE", root_path, id: "logo", class: "navbar-brand" %>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-        <%= link_to "Offers", items_path, class: "nav-link" %>
-        <%= link_to "Help", help_path, class: "nav-link" %>
+<div class="container-xxl position-relative p-0">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+    <a href="" class="navbar-brand p-0">
+      <h1 class="text-primary m-0">
+        <i class="fa fa-gem"></i>
+        Shopone
+      </h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0 pe-4">
+        <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
+        <%= link_to "Offers", items_path, class: "nav-item nav-link" %>
+        <%= link_to "Help", help_path, class: "nav-item nav-link" %>
+        <%= link_to "Contact", contact_path, class: "nav-item nav-link" %>
         <% if logged_in? %>
-          <%= link_to "Friends", friends_path, class: "nav-link" %>
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Profile", current_user, class: "dropdown-item" %></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %></li>
-            <li><%= link_to "Log out", logout_path, method: "delete", class: "dropdown-item" %></li>
-          </ul>
-        </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><%= link_to "Users", users_path, class: "dropdown-item" %></li>
-            </ul>
-          </li>
-        <% else %>
-          <%= link_to "Log in", login_path, class: "nav-link" %>
-          <% end %>
-      </ul>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
+            <div class="dropdown-menu m-0">
+              <%= link_to "Profile", current_user, class: "dropdown-item" %>
+              <%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Friends", friends_path, class: "dropdown-item" %>
+              <%= link_to "Sign out", logout_path, method: "delete", class: "dropdown-item" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to "Sign up", signup_path, class: "btn btn-primary py-2 px-4" unless logged_in? %>
       <form class="d-flex">
-        <button class="btn btn-outline-dark" type="submit">
+        <button class="btn btn-outline-warning" type="submit">
           <i class="bi-cart-fill me-1"></i>
           Cart
-          <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+          <span class="badge bg-warning text-black ms-1 rounded-pill">0</span>
         </button>
       </form>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
