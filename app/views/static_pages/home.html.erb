@@ -1,5 +1,5 @@
-<section class="bg-light py-5">
 <% if logged_in? %>
+  <%= render "layouts/header" %>
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
@@ -18,7 +18,7 @@
     </div>
   </div>
 <% else %>
-
+    <%= render "layouts/header" %>
     <div class="container px-5 my-5 px-5">
       <div class="card mb-4">
         <div class="card-body p-4">
@@ -40,4 +40,3 @@
       </div>
     </div>
 <% end %>
-</section>
