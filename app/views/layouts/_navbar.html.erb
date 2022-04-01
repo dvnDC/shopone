@@ -11,10 +11,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0 pe-4">
-        <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
-        <%= link_to "Offers", items_path, class: "nav-item nav-link" %>
-        <%= link_to "Help", help_path, class: "nav-item nav-link" %>
-        <%= link_to "Contact", contact_path, class: "nav-item nav-link" %>
+        <%= link_to "Home", root_path, class: "nav-item nav-link #{is_active(root_path)}" %>
+        <%= link_to "Products", items_path, class: "nav-item nav-link #{is_active(items_path)}" %>
+        <%= link_to "Help", help_path, class: "nav-item nav-link #{is_active(help_path)}" %>
+        <%= link_to "About us", about_path, class: "nav-item nav-link #{is_active(about_path)}" %>
+        <%= link_to "Contact", contact_path, class: "nav-item nav-link #{is_active(contact_path)}" %>
         <% if logged_in? %>
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
@@ -25,16 +26,16 @@
               <%= link_to "Sign out", logout_path, method: "delete", class: "dropdown-item" %>
             </div>
           </div>
+          </div>
+          <form class="d-flex">
+            <button class="btn btn-outline-warning" type="submit">
+              <i class="bi-cart-fill me-1"></i>
+              Cart
+              <span class="badge bg-warning text-black ms-1 rounded-pill">0</span>
+            </button>
+          </form>
         <% end %>
-      </div>
-      <%= link_to "Sign up", signup_path, class: "btn btn-primary py-2 px-4" unless logged_in? %>
-      <form class="d-flex">
-        <button class="btn btn-outline-warning" type="submit">
-          <i class="bi-cart-fill me-1"></i>
-          Cart
-          <span class="badge bg-warning text-black ms-1 rounded-pill">0</span>
-        </button>
-      </form>
-    </div>
+        </div>
+    <%= link_to "Sign up", signup_path, class: "btn btn-primary py-2 px-4" unless logged_in? %>
   </nav>
 </div>
