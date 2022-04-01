@@ -1,42 +1,5 @@
 <% if logged_in? %>
   <%= render "layouts/header" %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed_microposts' %>
-    </div>
-  </div>
 <% else %>
     <%= render "layouts/header" %>
-    <div class="container px-5 my-5 px-5">
-      <div class="card mb-4">
-        <div class="card-body p-4">
-
-      <div class="text-center mb-5">
-
-        <div class="card mb-4">
-          <div class="card-body p-4">
-        <h2 class="fw-bolder">New here?</h2>
-        <p class="lead mb-0">Don't wait, just sign-up and check what awaits you! </p>
-      </div>
-        </div>
-      </div>
-      <div class="text-center mb-5">
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-
-      </div>
-        </div>
-      </div>
-    </div>
 <% end %>
