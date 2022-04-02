@@ -1,17 +1,68 @@
-<%= form_with(model: @user, local: true) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
+<div class="col-md-6 bg-dark d-flex align-items-center text-center">
+  <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+    <h5 class="section-title ff-secondary text-start text-primary fw-normal">New here?</h5>
+    <h1 class="text-white mb-4">Sign up</h1>
+      <%= form_with(model: @user, local: true) do |f| %>
+      <div class="col-12">
+        <div class="form-floating">
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
+        <%#= render 'shared/error_messages', object: f.object %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
+            </div>
+            </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="form-floating">
+              <%= f.text_field :name, class: 'form-control', id: "name", placeholder: "Your Name" %>
+              <%= f.label "Your name" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" placeholder="TBA">
+              <label for="email">TBA</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating date" id="date3" data-target-input="nearest">
+              <%= f.email_field :email, class: 'form-control', id: "name", placeholder: "Email address" %>
+              <%= f.label :email %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-floating">
+              <select class="form-select" id="select1">
+                <option value="1">TBA 1</option>
+                <option value="2">TBA 2</option>
+                <option value="3">TBA 3</option>
+              </select>
+              <label for="select1">Country</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating">
+              <%= f.password_field :password, class: 'form-control', id: "password", placeholder: "Password" %>
+              <%= f.label :password %>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-floating">
+              <%= f.password_field :password_confirmation, class: 'form-control', id: "password", placeholder: "Password" %>
+              <%= f.label :password_confirmation %>
+            </div>
+          </div>
+<!--          <div class="col-12">-->
+<!--            <div class="form-floating">-->
+<!--              <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>-->
+<!--              <label for="message">Special Request</label>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="col-12">
+<!--            <button class="" type="submit">Create account</button>-->
+            <%= f.submit yield(:button_text), class: "btn btn-primary w-100 py-3" %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
