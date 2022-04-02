@@ -14,10 +14,6 @@ class MicropostsController < ApplicationController
     end
   end
 
-  # def show ##??? dodane? "TODO"
-  #   @micropost = Micropost.find(params[:id])
-  # end
-
   def destroy
     @micropost = Micropost.find(params[:id])
     @micropost.destroy
