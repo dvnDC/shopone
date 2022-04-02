@@ -52,10 +52,5 @@ group :test do
   gem 'guard'
   gem 'guard-minitest'
   gem 'minitest'
-end
-
-group :development, :test do
-  gem 'rspec-rails', '~> 5.0.0'
-  gem 'faker', '2.19.0'
-  gem "factory_bot_rails"
+  gem 'rails-controller-testing', '1.0.5' #TODO: rework tests then delete
 end
