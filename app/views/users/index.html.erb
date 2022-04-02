@@ -14,14 +14,18 @@
 </div>
 
 
-<div class="digg_pagination">
-<%= will_paginate %>
-</div>
+<div class="container-xxl pt-5 pb-3">
+  <div class="container">
 
-<ul class="users">
-  <%= render @users %>
-</ul>
-<div class="digg_pagination">
-<%= will_paginate %>
+    <div class="digg_pagination">
+      <%= will_paginate %>
+    </div>
+
+    <%= render @users %>
+
+    <div class="digg_pagination">
+      <%= will_paginate %>
+    </div>
+
+  </div>
 </div>
-<p>
