@@ -32,10 +32,6 @@ gem "will_paginate", "3.3.1"
 # Use Sass to process CSS
 # gem "sassc-rails"
 
-group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-end
-
 group :development do
   gem "web-console"
   gem "amazing_print"
@@ -55,4 +51,8 @@ group :test do
   gem 'minitest-reporters'
   gem 'rails-controller-testing', '1.0.5' #TODO: rework tests then delete
   gem 'simplecov', require: false
+end
+
+group :development, :test do
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
