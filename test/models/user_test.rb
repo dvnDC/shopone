@@ -74,16 +74,16 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  # test "should follow and unfollow a user" do
-  #   damian = users(:damian)
-  #   archer = users(:archer)
-  #   assert_not damian.following?(archer)
-  #   damian.follow(archer)
-  #   assert damian.following?(archer)
-  #   assert archer.followers.include?(damian)
-  #   damian.unfollow(archer)
-  #   assert_not damian.following?(archer)
-  # end
+  test "should follow and unfollow a user" do
+    damian = users(:damian)
+    archer = users(:archer)
+    assert_not damian.following?(archer)
+    damian.follow(archer)
+    assert damian.following?(archer)
+    assert archer.followers.include?(damian)
+    damian.unfollow(archer)
+    assert_not damian.following?(archer)
+  end
 
 
   ### DZIALA ALE DO POPRAWY, relationships w fixtures trzeba zmienic na inne
@@ -99,9 +99,9 @@ class UserTest < ActiveSupport::TestCase
       assert damian.feed.include?(post_self)
     end
     # Posts from unfollowed user
-    # archer.microposts.each do |post_unfollowed|
-    #   assert_not damian.feed.include?(post_unfollowed)
-    # end
+    archer.microposts.each do |post_unfollowed|
+      assert_not damian.feed.include?(post_unfollowed)
+    end
   end
 
 end
