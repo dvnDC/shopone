@@ -38,6 +38,7 @@ end
 
 group :development do
   gem "web-console"
+  gem "amazing_print"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
@@ -48,9 +49,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-
   gem 'guard'
   gem 'guard-minitest'
   gem 'minitest'
+  gem 'minitest-reporters'
   gem 'rails-controller-testing', '1.0.5' #TODO: rework tests then delete
+  gem 'simplecov', require: false
 end
