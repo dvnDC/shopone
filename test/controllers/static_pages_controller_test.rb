@@ -2,7 +2,7 @@ require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @base_title = "Ruby on Rails Tutorial Sample App"
+    @base_title = "Shopone"
   end
 
   test "should get home" do
@@ -24,5 +24,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get contact_path
     assert_response :success
     assert_select "title", "Contact | #{@base_title}"
+  end
+  test "should get products" do
+    get contact_path
+    assert_response :success
+    assert_select "title", "Products | #{@base_title}"
   end
 end
