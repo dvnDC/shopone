@@ -18,7 +18,7 @@ gem "bcrypt", "~> 3.1.7"
 
 # Image handling. "TODO: check and delete unused"
 gem "mini_magick"
-# gem "image_processing"
+gem "image_processing"
 # gem 'ffi'
 # gem 'ruby-vips' # install libvips-dev || libvips is used as an image processing engine by sharp (on node.js), bimg, sharp for Go, Ruby on Rails
 gem 'active_storage_validations'
