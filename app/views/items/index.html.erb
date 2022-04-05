@@ -52,7 +52,7 @@
       </ul>
 
       <div class="text-center">
-        <%= link_to "Add new offer", new_item_path, class: "btn btn-primary" %>
+        <%= link_to "Add new offer", new_item_path %>
       </div>
       <div class="container px-4 px-lg-5 mt-5">
         <div class="digg_pagination">
@@ -64,7 +64,7 @@
             <div class="col mb-5">
               <div class="card h-100">
                 <div class="text-center">
-                  <%= link_to image_tag(item.display_image, height: "150") if item.image %>
+                  <%= image_tag(item.display_image, height: "150") if item.display_image %>
                 </div>
                 <div class="card-body p-4">
                   <div class="text-center">
@@ -76,7 +76,7 @@
                 </div>
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                   <div class="text-center">
-                    <%= link_to "View", item, class: "btn btn-primary", class: "btn btn-outline-dark mt-auto" %>
+                    <%= link_to "View", item, class: "btn btn-primary" %>
                   </div>
                 </div>
               </div>
@@ -98,27 +98,27 @@
       <div id="tab-1" class="tab-pane fade show p-0 active">
         <div class="row g-4">
           <div class="digg_pagination">
-          <%= will_paginate %>
+            <%= will_paginate %>
           </div>
           <% @items.each do |item| %>
-          <div class="col-lg-6">
-            <div class="d-flex align-items-center">
-              <div class="text-center">
-              <%= link_to image_tag(item.display_image, width: "150") if item.image %>
-              </div>
-              <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
-              <div class="w-100 d-flex flex-column text-start ps-4">
-                <h5 class="d-flex justify-content-between border-bottom pb-2">
-                  <span><%= item.name %></span>
-                  <span class="text-primary"><%= item.price %> $</span>
-                </h5>
-                <small class="fst-italic"><%= item.content %></small>
+            <div class="col-lg-6">
+              <div class="d-flex align-items-center">
+                <div class="text-center">
+                  <%= link_to image_tag(item.display_image, width: "150") if item.display_image %>
+                </div>
+                <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
+                <div class="w-100 d-flex flex-column text-start ps-4">
+                  <h5 class="d-flex justify-content-between border-bottom pb-2">
+                    <span><%= item.name %></span>
+                    <span class="text-primary"><%= item.price %> $</span>
+                  </h5>
+                  <small class="fst-italic"><%= item.content %></small>
+                </div>
               </div>
             </div>
-          </div>
           <% end %>
           <div class="digg_pagination">
-          <%= will_paginate %>
+            <%= will_paginate %>
           </div>
         </div>
       </div>
