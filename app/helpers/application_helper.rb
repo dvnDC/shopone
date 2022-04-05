@@ -10,7 +10,13 @@ module ApplicationHelper
     end
   end
 
+  # Active navbar link helper.
   def is_active(path)
     current_page?(path) ? "active" : ""
+  end
+
+  # Items counter.
+  def items_amount
+    Item.all.count
   end
 end
