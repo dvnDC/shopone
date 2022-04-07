@@ -45,7 +45,9 @@
     <div class="col mb-5">
       <div class="card h-100">
         <div class="text-center">
-          <%= link_to image_tag(@item.display_image, height: "250"), class: "card-img-top" if @item.image %>
+          <%#= link_to image_tag(@item.display_image, height: "250"), class: "card-img-top" if @item.display_image %>
+          <%= image_tag("img/item_default.png", height: "500") %>
+
         </div>
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
         </div>

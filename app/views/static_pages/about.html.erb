@@ -1,4 +1,4 @@
-<% provide(:title, 'Contact') %>
+<% provide(:title, 'About') %>
 
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
   <div class="container text-center my-5 pt-5 pb-4">
@@ -39,16 +39,20 @@
         <div class="row g-4 mb-4">
           <div class="col-sm-6">
             <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-              <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">0</h1>
+              <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">
+                <%= users_amount %>
+              </h1>
               <div class="ps-4">
-                <p class="mb-0">User</p>
-                <h6 class="text-uppercase mb-0">Comments</h6>
+                <p class="mb-0">Registered</p>
+                <h6 class="text-uppercase mb-0">Users</h6>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-              <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up"><%= items_amount %></h1>
+              <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">
+                <%= items_amount %>
+              </h1>
               <div class="ps-4">
                 <p class="mb-0">Active</p>
                 <h6 class="text-uppercase mb-0">Offers</h6>
