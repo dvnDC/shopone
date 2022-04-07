@@ -1,6 +1,6 @@
 <% if @feed_microposts.any? %>
     <%= render @feed_microposts %>
   <div class="digg_pagination">
-    <%= will_paginate @feed_microposts, params: { controller: :static_pages, action: :home } %>
+    <%= will_paginate @feed_microposts, params: { controller: :static_pages} %>
   </div>
 <% end %>
