@@ -35,6 +35,7 @@ gem "will_paginate", "3.3.1"
 group :development do
   gem "web-console"
   gem "amazing_print"
+  gem 'faker', '2.19.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
