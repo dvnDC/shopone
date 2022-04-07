@@ -4,7 +4,7 @@
     <%= micropost.content %>
     <%= image_tag micropost.display_image if micropost.image.attached? %>
     <div class="d-flex align-items-center">
-      <%= link_to image_tag("img/testimonial-1.jpg") %>
+      <%= image_tag("avatars/default.jpg", height: "100", width: "120") %>
       <div class="ps-3">
         <h5 class="mb-1">
           <%= link_to micropost.user.name, micropost.user %>

@@ -64,7 +64,8 @@
             <div class="col mb-5">
               <div class="card h-100">
                 <div class="text-center">
-                  <%= image_tag(item.display_image, height: "150") if item.display_image %>
+                  <%#= image_tag(item.display_image, height: "150") if item.display_image %>
+                  <%= image_tag("img/item_default.png", height: "200") %>
                 </div>
                 <div class="card-body p-4">
                   <div class="text-center">
@@ -104,7 +105,8 @@
             <div class="col-lg-6">
               <div class="d-flex align-items-center">
                 <div class="text-center">
-                  <%= link_to image_tag(item.display_image, width: "150") if item.display_image %>
+                  <%#= link_to image_tag(item.display_image, width: "150") if item.display_image %>
+                  <%= image_tag("img/item_default.png", height: "200") %>
                 </div>
                 <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                 <div class="w-100 d-flex flex-column text-start ps-4">

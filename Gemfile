@@ -18,7 +18,7 @@ gem "bcrypt", "~> 3.1.7"
 
 # Image handling. "TODO: check and delete unused"
 gem "mini_magick"
-# gem "image_processing"
+gem "image_processing"
 # gem 'ffi'
 # gem 'ruby-vips' # install libvips-dev || libvips is used as an image processing engine by sharp (on node.js), bimg, sharp for Go, Ruby on Rails
 gem 'active_storage_validations'
@@ -35,6 +35,7 @@ gem "will_paginate", "3.3.1"
 group :development do
   gem "web-console"
   gem "amazing_print"
+  gem 'faker', '2.19.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]

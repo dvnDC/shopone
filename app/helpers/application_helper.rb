@@ -15,8 +15,4 @@ module ApplicationHelper
     current_page?(path) ? "active" : ""
   end
 
-  # Items counter.
-  def items_amount
-    Item.all.count
-  end
 end

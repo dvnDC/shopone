@@ -14,15 +14,14 @@
 <!--</li>-->
 
 <li id="items" -<%= item.id %>>
-    <%= item.name %>
-    <%= item.price %>
-    <%= item.content %>
-    <%= item.content %>
-    <%= image_tag item.display_image if item.image.attached? %>
+  <%= item.name %>
+  <%= item.price %>
+  <%= item.content %>
+  <%= item.content %>
   <%= image_tag item.display_image if item.image.attached? %>
-Posted <%= time_ago_in_words(item.created_at) %> ago.
-    <% if current_user?(item.user) %>
-<%= link_to "delete", item, method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
-</span>
+  Posted <%= time_ago_in_words(item.created_at) %> ago.
+  <% if current_user?(item.user) %>
+    <%= link_to "delete", item, method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  </span>
 </li>
