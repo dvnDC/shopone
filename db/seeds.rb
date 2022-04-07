@@ -18,9 +18,12 @@ end
 
 # Generate microposts for a subset of users.
 users = User.order(:created_at).take(6)
+counter = 1
 50.times do
   content = Faker::Lorem.sentence(word_count: 5)
   users.each { |user| user.microposts.create!(content: content)}
+  users.each { |user| user.items.create!(name: "Product #{counter}", category: 1, content: content, price: 99.99)}
+  counter += 1
 end
 
 # Create following relationships.
