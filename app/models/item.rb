@@ -13,11 +13,13 @@
 class Item < ApplicationRecord
 
   belongs_to :user
+  belongs_to :subcategory
 
   has_many :comments
 
   has_one_attached :image
   validates :user_id, presence: true
+  validates :subcategory_id, presence: true
   validates :name, presence: true
   validates :price, presence: true
   validates :content, presence: true, length: { maximum: 140 }
