@@ -13,6 +13,10 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def search
+    @categories = Category.paginate(page: params[:page])
+  end
+
   def help
   end
 
@@ -20,8 +24,5 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
-  end
-
-  def search
   end
 end
