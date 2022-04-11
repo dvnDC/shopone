@@ -9,6 +9,11 @@ archer:
   email: test@example.com
   password_digest: <%= User.digest('password') %>
 
+lua:
+  name: Lua Strong
+  email: lua@strong.com
+  password_digest: <%= User.digest('password') %>
+
 <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>
