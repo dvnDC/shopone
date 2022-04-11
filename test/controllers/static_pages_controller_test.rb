@@ -3,6 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @base_title = "Shopone"
+    @user = users(:damian)
   end
 
   test "should get home" do
@@ -25,9 +26,20 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Contact | #{@base_title}"
   end
-  test "should get products" do
-    get contact_path
+  test "should get search" do
+    get search_path
     assert_response :success
-    assert_select "title", "Products | #{@base_title}"
+    assert_select "title", "Search | #{@base_title}"
+  end
+  test "should get offers" do
+    get items_path
+    assert_response :success
+    assert_select "title", "Offers | #{@base_title}"
+  end
+  test "should get friends" do
+    log_in_as(@user)
+    get friends_path
+    assert_response :success
+    assert_select "title", "Friends | #{@base_title}"
   end
 end

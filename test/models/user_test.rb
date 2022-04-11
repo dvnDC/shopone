@@ -76,13 +76,13 @@ class UserTest < ActiveSupport::TestCase
 
   test "should follow and unfollow a user" do
     damian = users(:damian)
-    archer = users(:archer)
-    assert_not damian.following?(archer)
-    damian.follow(archer)
-    assert damian.following?(archer)
-    assert archer.followers.include?(damian)
-    damian.unfollow(archer)
-    assert_not damian.following?(archer)
+    lua = users(:lua)
+    assert_not damian.following?(lua)
+    damian.follow(lua)
+    assert damian.following?(lua)
+    assert lua.followers.include?(damian)
+    damian.unfollow(lua)
+    assert_not damian.following?(lua)
   end
 
 
@@ -90,6 +90,7 @@ class UserTest < ActiveSupport::TestCase
   test "feed should have the right posts" do
     damian = users(:damian)
     archer = users(:archer)
+    lua = users(:lua)
     # Posts from followed user
     archer.microposts.each do |post_following|
       assert damian.feed.include?(post_following)
@@ -99,7 +100,7 @@ class UserTest < ActiveSupport::TestCase
       assert damian.feed.include?(post_self)
     end
     # Posts from unfollowed user
-    archer.microposts.each do |post_unfollowed|
+    lua.microposts.each do |post_unfollowed|
       assert_not damian.feed.include?(post_unfollowed)
     end
   end

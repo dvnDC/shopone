@@ -16,14 +16,27 @@ User.create!(name: "Damian Ci",
                password_confirmation: password)
 end
 
+10.times do
+  category = Faker::Commerce.send(:categories, 1)
+  Category.create!(name: category[0])
+end
+
+categories = Category.order(:created_at).take(6)
+10.times do
+  subcategory = Faker::Commerce.brand
+  categories.each { |category| Subcategory.create!(name: subcategory, category_id: category.id) }
+end
+
 # Generate microposts for a subset of users.
 users = User.order(:created_at).take(6)
-counter = 1
-50.times do
-  content = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.microposts.create!(content: content)}
-  users.each { |user| user.items.create!(name: "Product #{counter}", category: 1, content: content, price: 99.99)}
-  counter += 1
+subcategories = Subcategory.order(:created_at).take(6)
+subcategories.each do |subcategory|
+  15.times do
+    content = Faker::Lorem.sentence(word_count: 5)
+    product_name = Faker::Commerce.product_name
+    users.each { |user| user.microposts.create!(content: content) }
+    users.each { |user| user.items.create!(name: product_name, content: content, price: 99.99, subcategory_id: subcategory.id) }
+  end
 end
 
 # Create following relationships.
