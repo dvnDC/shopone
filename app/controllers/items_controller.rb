@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :logged_in_user
   before_action :correct_user, only: :destroy
 
   def index
