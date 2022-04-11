@@ -1,6 +1,6 @@
 <% provide(:title, 'Offers') %>
 
-<div class="container-xxl py-5 bg-dark hero-header mb-5">
+<div class="container-fluid py-5 bg-dark hero-header mb-5">
   <div class="container text-center my-5 pt-5 pb-4">
     <h1 class="display-3 text-white mb-3 animated slideInDown">Search & Buy</h1>
     <nav aria-label="breadcrumb">
@@ -93,37 +93,37 @@
 </div>
 
 
-<div class="container-xxl py-5">
-  <div class="container">
-    <div class="tab-content">
-      <div id="tab-1" class="tab-pane fade show p-0 active">
-        <div class="row g-4">
-          <div class="digg_pagination">
-            <%= will_paginate %>
-          </div>
-          <% @items.each do |item| %>
-            <div class="col-lg-6">
-              <div class="d-flex align-items-center">
-                <div class="text-center">
+<!--<div class="container-xxl py-5">-->
+<!--  <div class="container">-->
+<!--    <div class="tab-content">-->
+<!--      <div id="tab-1" class="tab-pane fade show p-0 active">-->
+<!--        <div class="row g-4">-->
+<!--          <div class="digg_pagination">-->
+            <%#= will_paginate %>
+<!--          </div>-->
+          <%# @items.each do |item| %>
+<!--            <div class="col-lg-6">-->
+<!--              <div class="d-flex align-items-center">-->
+<!--                <div class="text-center">-->
                   <%#= link_to image_tag(item.display_image, width: "150") if item.display_image %>
-                  <%= image_tag("img/item_default.png", height: "200") %>
-                </div>
-                <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
-                <div class="w-100 d-flex flex-column text-start ps-4">
-                  <h5 class="d-flex justify-content-between border-bottom pb-2">
-                    <span><%= item.name %></span>
-                    <span class="text-primary"><%= item.price %> $</span>
-                  </h5>
-                  <small class="fst-italic"><%= item.content %></small>
-                </div>
-              </div>
-            </div>
-          <% end %>
-          <div class="digg_pagination">
-            <%= will_paginate %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                  <%#= image_tag("img/item_default.png", height: "200") %>
+<!--                </div>-->
+<!--                <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">-->
+<!--                <div class="w-100 d-flex flex-column text-start ps-4">-->
+<!--                  <h5 class="d-flex justify-content-between border-bottom pb-2">-->
+<!--                    <span><%#= item.name %></span>-->
+<!--                    <span class="text-primary"><%#= item.price %> $</span>-->
+<!--                  </h5>-->
+<!--                  <small class="fst-italic"><%#= item.content %></small>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          <%# end %>
+<!--          <div class="digg_pagination">-->
+            <%#= will_paginate %>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

@@ -24,6 +24,7 @@ gem "image_processing"
 gem 'active_storage_validations'
 
 gem "will_paginate", "3.3.1"
+gem 'faker', '2.19.0'
 
     # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -35,7 +36,6 @@ gem "will_paginate", "3.3.1"
 group :development do
   gem "web-console"
   gem "amazing_print"
-  gem 'faker', '2.19.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]

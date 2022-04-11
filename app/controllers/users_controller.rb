@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate(page: params[:page], :per_page => 20)
   end
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate(page: params[:page], :per_page => 8)
   end
 
   def new
@@ -48,17 +48,25 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
-    @user = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
-    render 'show_follow'
+    if logged_in?
+      @title = "Following"
+      @user = User.find(params[:id])
+      @users = @user.following.paginate(page: params[:page])
+      render 'show_follow'
+    else
+      redirect_to login_url
+    end
   end
 
   def followers
-    @title = "Followers"
-    @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
+    if logged_in?
+      @title = "Followers"
+      @user = User.find(params[:id])
+      @users = @user.followers.paginate(page: params[:page])
+      render 'show_follow'
+    else
+      redirect_to login_url
+    end
   end
 
   private
