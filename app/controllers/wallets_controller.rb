@@ -6,7 +6,11 @@ class WalletsController < ApplicationController
   end
 
   def new
-    @wallet = Wallet.new
+    if current_user.wallet.nil?
+      @wallet = Wallet.new
+    else
+      redirect_to @wallet
+    end
   end
 
   def edit
