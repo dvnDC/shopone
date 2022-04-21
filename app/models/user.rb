@@ -17,7 +17,8 @@ class User < ApplicationRecord
   # VANILLA
   attr_accessor :remember_token
 
-  has_one :wallet
+  has_many :wallet #TODO: FIX me,  belongs_to, maybe allet_id to user, https://guides.rubyonrails.org/association_basics.html
+
   has_many :microposts, dependent: :destroy
   has_many :items, dependent: :destroy
   has_many :comments, dependent: :destroy
