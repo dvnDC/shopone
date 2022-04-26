@@ -15,7 +15,7 @@
 
 
 <div class="text-center">
-  <% if current_user.wallet.nil? %>
+  <% if @user.wallet[0].nil? %>
   <%= link_to "Create wallet", new_wallet_path, class: "btn btn-primary" %>
     <% else %>
     <%= link_to "My wallet", @wallet, class: "btn btn-primary" %>
