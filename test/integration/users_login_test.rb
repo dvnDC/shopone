@@ -4,6 +4,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:damian)
+    @wallet = wallets(:wallet_damian)
   end
 
   test "login with valid information" do
