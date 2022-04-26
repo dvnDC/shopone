@@ -9,6 +9,7 @@ class WalletsController < ApplicationController
     if current_user.wallet.nil?
       @wallet = Wallet.new
     else
+      @wallet = Wallet.find(current_user.wallet[0].id)
       redirect_to @wallet
     end
   end
@@ -38,6 +39,7 @@ class WalletsController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user.id)
     @wallet = Wallet.find(params[:id])
   end
 
