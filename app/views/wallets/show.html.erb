@@ -1,0 +1,57 @@
+<% provide(:title, @user.name) %>
+
+<div class="container-fluid py-5 bg-dark hero-header mb-5">
+  <div class="container text-center my-5 pt-5 pb-4">
+    <h1 class="display-3 text-white mb-3 animated slideInDown">My Wallet</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center text-uppercase">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+        <li class="breadcrumb-item text-white active" aria-current="page">Wallet</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+
+
+<div class="container px-4 px-lg-5 mt-5">
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-2 justify-content-center">
+
+    <div class="col mb-15">
+      <div class="card h-100">
+        <div class="card-body p-5">
+          <div class="text-center">
+            <h1>
+              <%= image_tag("avatars/default.jpg", height: "100", width: "120") %>
+              <%= @user.name %>
+            </h1>
+            <%= render 'shared/stats' %>
+            <%= link_to "Edit profile", edit_user_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col mb-15">
+      <div class="card h-100">
+        <div class="card-body p-5">
+          <div class="text-center">
+            <h5 class="fw-bolder">
+              Account balance: <%= @wallet.money %>
+            </h5>
+          </div>
+          <div class="card-body p-5">
+            <div class="text-center">
+            <%= link_to "Add funds", "#", class: "btn btn-success py-sm-3 me-5" %>
+
+            <%= link_to "History", "#", class: "btn btn-warning py-sm-3" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
