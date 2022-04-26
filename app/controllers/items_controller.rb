@@ -35,9 +35,8 @@ class ItemsController < ApplicationController
     @item.image.attach(params[:item][:image])
     if @item.save
       flash[:success] = "Item created!"
-      redirect_to items_path
+      redirect_to @item
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
       render 'static_pages/home'
     end
   end
@@ -52,7 +51,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :category, :price, :content, :image)
+    params.require(:item).permit(:name, :subcategory_id, :price, :content, :image)
   end
 
   def correct_user
