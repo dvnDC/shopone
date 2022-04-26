@@ -6,7 +6,7 @@ class WalletsController < ApplicationController
   end
 
   def new
-    if current_user.wallet.nil?
+    if current_user.wallet[0].nil?
       @wallet = Wallet.new
     else
       @wallet = Wallet.find(current_user.wallet[0].id)
