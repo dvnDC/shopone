@@ -9,8 +9,8 @@
     </div>
     <div class="col-md-6">
       <div class="form-floating">
-        <%#= f.text_field :category, class: 'form-control' %>
-        <%#= f.label :category %>
+        <%= f.collection_select :subcategory_id, Subcategory.order(:id), :id, :name%>
+          <%= f.label :subcategory_id %>
       </div>
     </div>
     <div class="col-md-6">

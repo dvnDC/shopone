@@ -1,0 +1,8 @@
+<% provide(:button_text, 'Create wallet') %>
+<%= form_with(model: @wallet, local: true) do |f| %>
+
+  <%#= render 'shared/error_messages', object: f.object %>
+  <%= f.text_field :money, class: 'form-control', placeholder: "" %>
+  <%= f.label :money %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary w-100 py-3" %>
+<% end %>
