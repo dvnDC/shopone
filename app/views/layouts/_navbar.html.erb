@@ -16,8 +16,8 @@
         <%= link_to "About us", about_path, class: "nav-item nav-link #{is_active(about_path)}" %>
         <%= link_to "Contact", contact_path, class: "nav-item nav-link #{is_active(contact_path)}" %>
         <%= link_to "Search", search_path, class: "nav-item nav-link #{is_active(search_path)}" %>
+        <%= link_to "Products", items_path, class: "nav-item nav-link #{is_active(items_path)}" %>
         <% if logged_in? %>
-          <%= link_to "Products", items_path, class: "nav-item nav-link #{is_active(items_path)}" %>
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
             <div class="dropdown-menu m-0">
