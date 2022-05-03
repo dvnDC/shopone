@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @subcategories = @category.subcategories.paginate(page: params[:page], :per_page => 8)
+    @subcategories = @category.subcategories.paginate(page: params[:page], :per_page => 12)
   end
 
   def edit
@@ -15,10 +15,10 @@ class CategoriesController < ApplicationController
 
   def update
   end
-end
 
-private
+  private
 
-def category_params
-  params.require(:category)
+  def category_params
+    params.require(:category)
+  end
 end
