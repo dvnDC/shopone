@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   end
   resources :microposts, only: [:create, :destroy]
   resources :comments, only: [:create, :destroy]
-  resources :categories
+  resources :categories do
+    member do
+      resources :subcategories
+    end
+  end
+  resources :subcategories
   resources :items
   resources :wallets
   resources :relationships, only: [:create, :destroy]

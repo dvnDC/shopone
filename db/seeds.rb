@@ -16,15 +16,17 @@ User.create!(name: "Damian Ci",
                password_confirmation: password)
 end
 
-10.times do
-  category = Faker::Commerce.send(:categories, 1)
-  Category.create!(name: category[0])
-end
+categories = {"Electronics" => ["Camera & Photo", "Headphones"],
+              "Computers" => ["CPU", "GPU", "Motherboards", "Cooling", "Cases", "RAM", "HDD/SSD"],
+              "Sport" => ["Sport shoes", "Bikes"],
+              "Real Estate" => ["Apartments", "Houses", "Allotments", "Offices"],
+              "Video Games" => ["RPG", "Action", "Strategy", "Online goods"],
+              "Home and Garden" => ["Kitchen", "Living room", "Toilet", "Garden"],
+              "Music" => ["Vinyl records", "Music CDs"]}
 
-categories = Category.order(:created_at).take(6)
-10.times do
-  subcategory = Faker::Commerce.brand
-  categories.each { |category| Subcategory.create!(name: subcategory, category_id: category.id) }
+categories.each do |category, _|
+  cat = Category.create!(name: category)
+  categories[category].each {|subcat| Subcategory.create!(name: subcat, category_id: cat.id) }
 end
 
 # Generate microposts for a subset of users.

@@ -1,0 +1,129 @@
+<% provide(:title, 'Offers') %>
+
+<div class="container-fluid py-5 bg-dark hero-header mb-5">
+  <div class="container text-center my-5 pt-5 pb-4">
+    <h1 class="display-3 text-white mb-3">Search & Buy</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center text-uppercase">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+        <li class="breadcrumb-item text-white active" aria-current="page">Products</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center">
+      <h5 class="section-title ff-secondary text-center text-primary fw-normal">Search</h5>
+      <h1 class="mb-5">Most Popular Items</h1>
+    </div>
+    <div class="tab-class text-center">
+      <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+        <li class="nav-item">
+          <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+
+            <i class="fa fa-box fa-2x text-primary"></i>
+            <div class="ps-3">
+              <small class="text-body">Set</small>
+              <h6 class="mt-n1 mb-0">Grid</h6>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+            <i class="fa fa-th-list fa-2x text-primary"></i>
+            <div class="ps-3">
+              <small class="text-body">Set</small>
+              <h6 class="mt-n1 mb-0">List</h6>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
+            <i class="fa fa-random fa-2x text-primary"></i>
+            <div class="ps-3">
+              <small class="text-body">Random</small>
+              <h6 class="mt-n1 mb-0">Shot</h6>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="text-center">
+        <%= link_to "Add new offer", new_item_path %>
+      </div>
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="digg_pagination">
+          <%= will_paginate %>
+        </div>
+        <p>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <% @items.each do |item| %>
+            <div class="col mb-5">
+              <div class="card h-100">
+                <div class="text-center">
+                  <%#= image_tag(item.display_image, height: "150") if item.display_image %>
+                  <%= image_tag("img/item_default.png", height: "200") %>
+                </div>
+                <div class="card-body p-4">
+                  <div class="text-center">
+                    <h5 class="fw-bolder">
+                      <%= item.name %>
+                    </h5>
+                    <%= item.price %> EUR
+                  </div>
+                </div>
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center">
+                    <%= link_to "View", item, class: "btn btn-primary" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="digg_pagination">
+          <%= will_paginate %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="container-xxl py-5">-->
+<!--  <div class="container">-->
+<!--    <div class="tab-content">-->
+<!--      <div id="tab-1" class="tab-pane fade show p-0 active">-->
+<!--        <div class="row g-4">-->
+<!--          <div class="digg_pagination">-->
+<%#= will_paginate %>
+<!--          </div>-->
+<%# @items.each do |item| %>
+<!--            <div class="col-lg-6">-->
+<!--              <div class="d-flex align-items-center">-->
+<!--                <div class="text-center">-->
+<%#= link_to image_tag(item.display_image, width: "150") if item.display_image %>
+<%#= image_tag("img/item_default.png", height: "200") %>
+<!--                </div>-->
+<!--                <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">-->
+<!--                <div class="w-100 d-flex flex-column text-start ps-4">-->
+<!--                  <h5 class="d-flex justify-content-between border-bottom pb-2">-->
+<!--                    <span><%#= item.name %></span>-->
+<!--                    <span class="text-primary"><%#= item.price %> $</span>-->
+<!--                  </h5>-->
+<!--                  <small class="fst-italic"><%#= item.content %></small>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<%# end %>
+<!--          <div class="digg_pagination">-->
+<%#= will_paginate %>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
