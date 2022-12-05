@@ -1,6 +1,6 @@
 # Ruby on Rails Shopone application
 
-University of Gdansk Bachelor thesis.
+Basic CRUD application.
 
 ## License
  
