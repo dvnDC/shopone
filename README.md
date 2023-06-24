@@ -1,6 +1,6 @@
 # Ruby on Rails Shopone application
 
-Basic CRUD application.
+Basic the shop-like MVC application.
 
 ## License
  
