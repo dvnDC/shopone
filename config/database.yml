@@ -1,11 +1,14 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  username: <%= ENV['DATABASE_USER'] || 'postgres' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || '' %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: shopone_dev
+  database: <%= ENV['DATABASE_NAME'] || 'shopone_dev' %>
 
 test:
   <<: *default
@@ -15,4 +18,4 @@ production:
   <<: *default
   database: shopone_production
   username: shopone
-  password: <%= ENV["SHOPONE_DATABASE_PASSWORD"] %>
+  password: <%= ENV['SHOPONE_DATABASE_PASSWORD'] %>
