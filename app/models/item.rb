@@ -22,7 +22,7 @@ class Item < ApplicationRecord
   validates :subcategory_id, presence: true
   validates :name, presence: true
   validates :price, presence: true
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true, length: { maximum: 501 }
   validates :image, content_type: { in: %w[image/jpeg image/gif image/png], message: "must be a valid image format" },
             size: { less_than: 15.megabytes, message: "should be less then 15MB" }
 
