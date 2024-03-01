@@ -17,7 +17,6 @@ services:
       && bundle install --without production
       && rails db:create
       && rails db:migrate
-      && rails db:seed
       && yarn install
       && yarn build
       && yarn build:css

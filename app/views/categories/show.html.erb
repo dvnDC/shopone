@@ -17,12 +17,12 @@
   <div class="container">
     <div class="row g-4">
       <% @subcategories.each do |subcategory| %>
-        <a class="btn col-lg-2 col-sm-6 wow fadeInUp" href=<%= "/categories/#{subcategory.id}" %>>
+        <a class="btn col-lg-2 col-sm-6" href=<%= "#{@category.id}/subcategories/#{subcategory.id}" %>>
           <div class="service-item rounded pt-3">
             <div class="p-4">
               <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
+<!--              <i class="fa fa-3x fa-solid fa-desktop text-primary"></i>-->
               <h5><%= subcategory.name %></h5>
-              <p> Category </p>
             </div>
           </div>
         </a>
